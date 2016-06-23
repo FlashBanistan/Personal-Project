@@ -1,0 +1,22 @@
+{
+  "name": "flash-card-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlashBanistan/Personal-Project.git"
+  },
+  "author": "Aaron Chesley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlashBanistan/Personal-Project/issues"
+  },
+  "homepage": "https://github.com/FlashBanistan/Personal-Project#readme",
+  "dependencies": {
+    
+  }
+}
