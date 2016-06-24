@@ -1,12 +1,18 @@
 angular.module('FlashCards').service('flashcard', function($http){
 
-  this.getData = function(){
+  this.getCategoriesBySearch = function(searchTerm){
     return $http({
       method: "GET",
-      url: "https://www.coursehero.com/api/flashcards/categories/?api_key=YMBXVufy7GkBKoVE34SAMAZJfPVapK32&starts_with=spanish"
+      url: "https://www.coursehero.com/api/flashcards/categories/?api_key=YMBXVufy7GkBKoVE34SAMAZJfPVapK32&starts_with=" + searchTerm
     })
   };
 
+  this.getCategoryById = function(setId){
+    return $http({
+      method: "GET",
+      url: "https://www.coursehero.com/api/flashcards/categories/" + setId + "/sets/?api_key=YMBXVufy7GkBKoVE34SAMAZJfPVapK32"
+    })
+  };
 
 
 });
@@ -22,3 +28,4 @@ angular.module('FlashCards').service('flashcard', function($http){
 
 
 //https://www.coursehero.com/api/flashcards/categories?api_key=YMBXVufy7GkBKoVE34SAMAZJfPVapK32&starts_with=spanish
+//https://www.coursehero.com/api/flashcards/categories/36/sets/?api_key=YMBXVufy7GkBKoVE34SAMAZJfPVapK32

@@ -8,4 +8,9 @@ angular.module('FlashCards', ['ui.router']).config(function($stateProvider, $url
     templateUrl: '../views/browse.html',
     controller: 'browseCtrl'
   })
+  .state('category', {
+    url: '/browse/category',
+    templateUrl: '../views/category.html',
+    controller: 'browseCtrl'
+  })
 })
