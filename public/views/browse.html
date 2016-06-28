@@ -2,5 +2,5 @@
   <input ng-model='searchTerm' placeholder="Search Categories">
 </form>
 <ul>
-  <li ng-repeat='name in categories' ng-click='getCategory(name.id)' ui-sref='category'>{{name.category}}</li>
+  <li ng-repeat='name in categories' ui-sref='sets({nameId: name.id})'>{{name.category}}</li>
 </ul>
