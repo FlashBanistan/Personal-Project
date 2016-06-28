@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var flashcardSchema = require('./Flashcard.js')
+var setSchema = require('./Set.js')
 
 var userSchema = new mongoose.Schema({
   name: {
@@ -14,9 +14,8 @@ var userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  sets: [flashcardSchema]
-
-
+  sets: [setSchema],
+  favorites: [{type: mongoose.Schema.ObjectId, ref: 'Flashcard'}]
 
 
 });

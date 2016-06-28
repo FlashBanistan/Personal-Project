@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-module.exports = new mongoose.Schema({
+var flashcardSchema = new mongoose.Schema({
   term: {
     type: String,
     required: true,
@@ -13,7 +13,6 @@ module.exports = new mongoose.Schema({
     type: String,
   }
 
-
-
-
 });
+
+module.exports = mongoose.model('Flashcard', flashcardSchema);

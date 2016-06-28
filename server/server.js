@@ -31,4 +31,4 @@ app.delete('/api/flashcards/:id', FlashCardsCtrl.deleteFlashcardById);
 //User endpoints
 app.post('/api/user', UserCtrl.createNewUser);
 app.get('/api/user/:id', UserCtrl.getUserById);
-app.put('/api/user/id', UserCtrl.updateUserById);
+app.put('/api/user/:id', UserCtrl.updateUserById);
