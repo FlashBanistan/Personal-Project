@@ -1,7 +1,8 @@
 angular.module('FlashCards', ['ui.router']).config(function($stateProvider, $urlRouterProvider){
   $stateProvider
-  .state('home', {
+  .state('landing', {
     url: '',
+    templateUrl: '../views/landing.html',
   })
   .state('browse', {
     url: '/browse',

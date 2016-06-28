@@ -3,34 +3,12 @@
   <head>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/landing.css">
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
-    <title>FlashCards</title>
+    <title>FlashCards DB</title>
   </head>
   <body>
-    <section class="header">
-      <div class="left">
-        <img id="logo" src="./images/logo.png" alt="logo" />
-        <p id="site-name">Flashcards DB</p>
-      </div>
-      <div class="right">
-        <p id="signin">Sign In</p>
-        <img id="hamburger" src="./images/hamburger.png" alt="menu" />
-      </div>
-    </section>
-    <section class="img-container">
-      <div id="background-image">
-        <h1 id="ditchThePencil">Ditch the pencil</h1>
-        <p id="makeStudyingEasier">Make studying easier with Flashcards DB</p>
-        <div>
-          <input class="signup-input" type="text" placeholder="Email" name="name" value="">
-          <input class="signup-input" type="password" placeholder="Password" name="name" value="">
-        </div>
-        <button  class="signup-button" type="button" name="button">Signup for free</button>
-        <p id="orSignin">Or signin</p>
-      </div>
-    </section>
-
 
     <ui-view></ui-view>
 
@@ -46,5 +24,6 @@
     <script src="./js/controllers/browseCtrl.js"></script>
     <script src="./js/controllers/setsCtrl.js"></script>
     <script src="./js/controllers/setCtrl.js"></script>
+    <script src="./js/controllers/landingCtrl.js"></script>
   </body>
 </html>
