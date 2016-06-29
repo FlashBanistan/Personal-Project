@@ -1,8 +1,12 @@
-angular.module('FlashCards', ['ui.router']).config(function($stateProvider, $urlRouterProvider){
+angular.module('FlashCards', ['ui.router', 'ngAnimate']).config(function($stateProvider, $urlRouterProvider){
   $stateProvider
   .state('landing', {
     url: '',
     templateUrl: '../views/landing.html',
+  })
+  .state('home', {
+    url: '/',
+    templateUrl: '../views/home.html',
   })
   .state('browse', {
     url: '/browse',
@@ -29,4 +33,6 @@ angular.module('FlashCards', ['ui.router']).config(function($stateProvider, $url
     templateUrl: '../views/set.html',
     controller: 'setCtrl',
   })
+  $urlRouterProvider
+            .otherwise('/');
 })

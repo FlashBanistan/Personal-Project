@@ -1,5 +1,6 @@
-angular.module('FlashCards').directive('menu-bar', function(){
+angular.module('FlashCards').directive('menuBar', function(){
   return {
-    template: ''
+    restrict: "EA",
+    templateUrl: './js/directives/directive-templates/menu-bar.html'
   }
 });
