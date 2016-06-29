@@ -3,10 +3,12 @@
 <section class="body-container">
     <h1 class="set-name">{{set.title}}</h1>
     <h2 class="set-description">...{{set.description}}</h2>
-
-  <div class="flashcard-container" ng-repeat="obj in flashcards track by $index" ng-show="$index === currentIndex" ng-animate="slideInLeft">
+<div class="wrapper">
+    <div ng-class="{slideInLeft: $index===currentIndex && fob==='f', slideOutRight: $index !== currentIndex && fob==='f', slideInRight: $index===currentIndex && fob==='b', slideOutLeft: $index !== currentIndex && fob==='b'}" class="animated flashcard-container" ng-repeat="obj in flashcards track by $index" ng-show="$index === currentIndex">
     <h1 class="term">{{obj.term}}</h1>
   </div>
+</div>
+
   <section class="controls">
     <img src="../images/up.png" alt="up-arrow" />
     <div class="">

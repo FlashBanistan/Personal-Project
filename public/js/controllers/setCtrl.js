@@ -4,12 +4,14 @@ angular.module('FlashCards').controller('setCtrl', function($scope, flashcard, s
   $scope.flashcards = set.flashcards;
 
   $scope.nextCard = function(){
+    $scope.fob = "f";
     $scope.currentIndex++;
   }
   $scope.previousCard = function(){
     if($scope.currentIndex>0){
+      $scope.fob = "b";
       $scope.currentIndex--;
-    }  
+    }
   }
 
 
