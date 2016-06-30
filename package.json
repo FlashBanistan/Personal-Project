@@ -17,9 +17,13 @@
   },
   "homepage": "https://github.com/FlashBanistan/Personal-Project#readme",
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "cors": "^2.7.1",
     "express": "^4.14.0",
-    "mongoose": "^4.5.2"
+    "express-session": "^1.13.0",
+    "mongoose": "^4.5.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   }
 }

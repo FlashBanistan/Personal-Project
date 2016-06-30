@@ -1,26 +1,47 @@
-//Dependencies
+//Dependencies//
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
+var session = require('express-session');
+var passport = require('./services/passport');
 var app = express();
-//Require controllers
+
+
+//Controllers//
 var FlashCardsCtrl = require('./controllers/FlashCardsCtrl.js');
 var UserCtrl = require('./controllers/UserCtrl.js');
 
-//Middleware
+//Policies//
+var isAuthed = function(req, res, next){
+  if(!req.isAuthenticated()) return res.status(401).send();
+  return next();
+};
+
+//Middleware//
 app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(cors());
 
-//Create node server
-var port = 3000;
-app.listen(port, function(){
-  console.log('Listening on port ', port);
-});
+app.use(session({
+  secret: "ifklsjfl;sdjiogjsdfsdoaidf",
+  saveUninitialized: false,
+  resave: false
+}));
 
-//Connect to mongo with ecommerce as name of db
-mongoose.connect('mongodb://localhost/FlashCards');
+//Session and Passport//
+app.use(passport.initialize());
+app.use(passport.session());
+
+//Passport Endpoints//
+app.post('/login', passport.authenticate('local', {
+   successRedirect: '/me'
+}));
+app.get('/logout', function(req, res, next){
+  req.logout();
+  console.log("logged out")
+  return res.status(200).send('logged out');
+});
 
 //Flashcard endpoints
 app.post('/api/flashcards', FlashCardsCtrl.createFlashcard);
@@ -31,4 +52,15 @@ app.delete('/api/flashcards/:id', FlashCardsCtrl.deleteFlashcardById);
 //User endpoints
 app.post('/api/user', UserCtrl.createNewUser);
 app.get('/api/user/:id', UserCtrl.getUserById);
+app.get('/me', isAuthed, UserCtrl.me);
 app.put('/api/user/:id', UserCtrl.updateUserById);
+
+
+
+//Connect to mongo with FlashCards as name of db
+mongoose.connect('mongodb://localhost/FlashCards');
+//Create node server
+var port = 3000;
+app.listen(port, function(){
+  console.log('Listening on port ', port);
+});

@@ -1,0 +1,36 @@
+<menu-bar></menu-bar>
+
+
+<section class="login-container">
+  <div class="login-header"></div>
+  <div class="login-container-body">
+    <p>Sign In Using:</p>
+    <div class="o-auth-container">
+      <button type="button" name="Facebook">Facebook</button>
+      <button type="button" name="Twitter">Twitter</button>
+    </div>
+    <p>Or</p>
+    <form ng-submit="login(user)">
+      <p>Email address</p>
+      <input type="email" ng-model="user.email" required/>
+      <p>Password</p>
+      <input type="password" ng-model="user.password" required/>
+      <button ng-submit="login(user)" type="submit">Login</button>
+
+    </form>
+    <div class="recovery-remember-container">
+      <button type="checkbox" name="remember me"></button>
+      <p>Remember Me</p>
+      <p>Forgot Your Password?</p>
+    </div>
+    <div class="submit-container">
+      <button type="submit">Submit</button>
+      <button type="button" name="button">Sign Up Instead</button>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- FlashBanistan66@gmail.com
+password -->

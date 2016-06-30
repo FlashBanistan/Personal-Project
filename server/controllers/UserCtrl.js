@@ -17,6 +17,13 @@ module.exports = {
     })
   },
 
+  me: function(req, res, next){
+    if(!req.user) return res.status(401).send("Current user not defined");
+    req.user.password = null;
+    console.log("logging in")
+    return res.status(200).json(req.user);
+  },
+
   updateUserById: function(req, res){
     UserModel.findByIdAndUpdate(req.params.id, {$set: req.body}, function(err, result){
       if(err) return res.send(err);

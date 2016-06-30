@@ -4,8 +4,13 @@ angular.module('FlashCards', ['ui.router', 'ngAnimate']).config(function($stateP
     url: '',
     templateUrl: '../views/landing.html',
   })
+  .state('login', {
+    url: '/login',
+    templateUrl: '../views/login.html',
+    controller: 'loginCtrl'
+  })
   .state('home', {
-    url: '/',
+    url: '/home',
     templateUrl: '../views/home.html',
   })
   .state('browse', {
