@@ -1,0 +1,47 @@
+<menu-bar></menu-bar>
+<section class="landing-img-container">
+  <div id="landing-background-image">
+    <h1 id="ditchThePencil">Ditch the pencil</h1>
+    <p id="makeStudyingEasier">Make studying easier with</p>
+    <p id="site-name">Flashcards DB</p>
+      <form ng-submit="signup(newUser)">
+        <div>
+          <input ng-model="newUser.email" class="signup-input" type="email" placeholder="Email" required/>
+          <input ng-model="newUser.password" class="signup-input" type="password" placeholder="Password" required/>
+        </div>
+        <button ng-submit="signup(newUser)" class="signup-button" type="submit">Signup for free</button>
+      </form>
+      <p id="orSignin">Or sign in using</p>
+      <button type="button" id="email-password-button" data-toggle="modal" data-target="#myModal">Email and Password</button>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" data-backdrop="">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Sign In</h4>
+            </div>
+            <div class="modal-body">
+              <form ng-submit="login(user)">
+                <p>Email address</p>
+                <input type="email" ng-model="user.email" required/>
+                <p>Password</p>
+                <input type="password" ng-model="user.password" required/>
+                <button id="modal-login-button" ng-submit="login(user)" type="submit">Login</button>
+              </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--  -->
+  <div class="o-auth-container">
+      <img class="o-auth-buttons" src="../images/facebook.svg" alt="facebook sign in"/>
+      <img class="o-auth-buttons" src="../images/twitter.svg" alt="twitter sign in"/>
+    </div>
+  </div>
+</section>
+<section class="landing-footer">
+
+</section>
