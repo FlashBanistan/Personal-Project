@@ -1,16 +1,49 @@
-/*.home-header{
-  position: absolute;
-  right: 50%;
-  left: 25%;
-  top: 25%;
-
-
-  width: 50%;
-  height:500px;
+#home-greeting{
+  text-align: center;
+}
+#home-header{
+  width: 100%;
+  height: 100px;
   background-color: maroon;
-}*/
-.home-greeting{
+  margin-bottom: 25px;
+}
+.home-update_create-container{
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.home-editAccount{
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 30%;
+  height: 670px;
+  background-color: lightgrey;
+  border: 1px solid black;
+}
+.home-createSet{
+  width: 70%;
+  height: 670px;
+  background-color: lightgrey;
+  border: 1px solid black;
+}
+#home-accountInfo{
+  font-family: Orbitron;
+}
+#home-accountProperty{
+  font-size: 20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#home-createAndManageSet{
+  text-align: center;
+  font-family: Orbitron;
+}
+.home-mySetsCreateSetContainer{
+  display: flex;
+  flex-direction: row;
+}
+#home-mySets{
+  width: 100%;
+  border: 1px solid black;
 }

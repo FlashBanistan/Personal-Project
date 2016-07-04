@@ -1,9 +1,29 @@
 <menu-bar></menu-bar>
 
-<section class="home-header">
-
-</section>
-<div class="home-greeting">
-  <h1>Welcome to your account ...
-  <h2>What would you like to do?</h2>
+<h1 id="home-greeting">Welcome to your account {{name}}</h1>
+<div id="home-header"></div>
+<div class="home-update_create-container">
+  <form ng-model="user" class="home-editAccount">
+    <h1 id="home-accountInfo">Account Information</h1>
+    <p id="home-accountProperty">Name: <input ng-model="user.name" ng-value="name" type="text" required></p>
+    <p id="home-accountProperty">Email: <input ng-model="user.email" ng-value="email" type="text" required></p>
+    <button  ng-click="updateUsernamePassword(user)" id="home-update" type="button">Update Name/Email</button>
+    <p id="home-accountProperty">Password: <input ng-model="user.password" type="password" required></p>
+    <button id="home-update" type="button">Update Password</button>
+  </form>
+  <div class="home-createSet">
+    <h1 id="home-createAndManageSet">Create/Manage Sets</h1>
+    <div class="home-mySetsCreateSetContainer">
+      <div id="home-mySets">
+        <h2>My Sets</h2>
+        <ul ng-repeat="set in sets">
+          <li ng-click="goToState(set)">{{set.setName}}</li>
+        </ul>
+        <form ng-model="newSet">
+          <input ng-model="newSet.setName" type="text" placeholder="enter set name">
+          <button ng-click="createNewSet(newSet)" type="button">Add Set</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

@@ -10,6 +10,12 @@ angular.module('FlashCards', ['ui.router', 'ngAnimate']).config(function($stateP
     templateUrl: '../views/home.html',
     controller: 'homeCtrl',
   })
+  .state('mySet', {
+    url: '/home/myset/:setId',
+    templateUrl: '../views/myset.html',
+    controller: 'mySetCtrl',
+    params: { obj: null},
+  })
   .state('browse', {
     url: '/browse',
     templateUrl: '../views/browse.html',

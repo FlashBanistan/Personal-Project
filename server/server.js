@@ -45,6 +45,7 @@ app.post('/api/user', UserCtrl.createNewUser);
 app.get('/api/user/:id', UserCtrl.getUserById);
 app.get('/me', isAuthed, UserCtrl.me);
 app.put('/api/user/:id', UserCtrl.updateUserById);
+app.put('/api/user/createNewSet/:id', UserCtrl.createSetOnUser);
 //Connect to mongo with FlashCards as name of db
 mongoose.connect('mongodb://localhost/FlashCards');
 //Create node server

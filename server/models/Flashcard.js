@@ -16,3 +16,13 @@ var flashcardSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Flashcard', flashcardSchema);
+
+
+
+
+// Postman Code to create flashcard
+// {
+//     "term": "La Manzana",
+//     "answer": "Apple",
+//     "hint": "Starts with 'A'"
+// }
