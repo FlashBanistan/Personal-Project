@@ -36,7 +36,6 @@ app.get('/logout', function(req, res, next){
 });
 //Flashcard endpoints
 app.post('/api/flashcards', FlashCardsCtrl.createFlashcard);
-app.get('/api/flashcards', FlashCardsCtrl.getAllFlashcards);
 app.get('/api/flashcards/:id', FlashCardsCtrl.getFlashcardById);
 app.put('/api/flashcards/:id', FlashCardsCtrl.updateFlashcardById);
 app.delete('/api/flashcards/:id', FlashCardsCtrl.deleteFlashcardById);

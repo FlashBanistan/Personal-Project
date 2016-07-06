@@ -1,5 +1,4 @@
-angular.module('FlashCards').controller('mySetCtrl', function($scope, $state, $stateParams){
-  console.log($stateParams.obj)
+angular.module('FlashCards').controller('mySetCtrl', function($scope, $state, $stateParams, flashcard){
 
   $scope.currentIndex = 0;
   $scope.currentFlashcard = $scope.currentIndex+1;
@@ -9,7 +8,6 @@ angular.module('FlashCards').controller('mySetCtrl', function($scope, $state, $s
   $scope.flashcards = $scope.set.flashcards;
 
   $scope.nextCard = function(){
-    console.log($scope.flashcards.length);
     if($scope.currentFlashcard<$scope.flashcards.length){
       $scope.fob = "f";
       $scope.currentIndex++;
@@ -33,6 +31,15 @@ angular.module('FlashCards').controller('mySetCtrl', function($scope, $state, $s
     else{
       $scope.showTerm = true;
     }
+  }
+
+
+  // Requests //
+
+  $scope.addCardToSet = function(newCard){
+    var setId = $stateParams.obj._id;
+    flashcard.addCardToSet(newCard, setId).then(function(response){
+    })
   }
 
 

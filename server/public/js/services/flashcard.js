@@ -34,6 +34,17 @@ angular.module('FlashCards').service('flashcard', function($http, $q){
     return deferred.promise;
   };
 
+  this.addCardToSet = function(newCard, setId){
+    //console.log("in flashcard.js")
+    return $http({
+      method: "POST",
+      url: "/api/flashcards",
+      data: {newCard: newCard,
+      setId: setId}
+    }).then(function(response){
+      return response;
+    })
+  }
 
 
 });

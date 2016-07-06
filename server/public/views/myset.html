@@ -7,20 +7,29 @@
     <p>{{currentFlashcard}}/{{flashcards.length}}</p>
 <div class="wrapper">
     <div ng-repeat="obj in flashcards track by $index">
-      <div ng-class="{slideInLeft: $index===currentIndex && fob==='f', slideOutRight: $index !== currentIndex && fob==='f', slideInRight: $index===currentIndex && fob==='b', slideOutLeft: $index !== currentIndex && fob==='b', flipOutX: fob==='u' && showTerm===true, flipInX: fob==='u' && showTerm===false}" ng-show="$index === currentIndex && showTerm===false" class="animated flashcard-container" >
+      <div ng-class="{slideInLeft: $index===currentIndex && fob==='f', fadeOutRight: $index !== currentIndex && fob==='f', slideInRight: $index===currentIndex && fob==='b', fadeOutLeft: $index !== currentIndex && fob==='b', flipOutX: fob==='u' && showTerm===true, flipInX: fob==='u' && showTerm===false}" ng-show="$index === currentIndex && showTerm===false" class="animated flashcard-container" >
           <h1 class="term">{{obj.term}}</h1>
       </div>
-      <div ng-show="$index===currentIndex && showTerm===true" ng-class="{slideInLeft: $index===currentIndex && fob==='f', slideOutRight: $index !== currentIndex && fob==='f', slideInRight: $index===currentIndex && fob==='b', slideOutLeft: $index !== currentIndex && fob==='b', flipInX: fob==='u' && showTerm===true, flipOutX: fob==='u' && showTerm===false}" class="animated flashcard-container">
+      <div ng-show="$index===currentIndex && showTerm===true" ng-class="{slideInLeft: $index===currentIndex && fob==='f', fadeOutRight: $index !== currentIndex && fob==='f', slideInRight: $index===currentIndex && fob==='b', fadeOutLeft: $index !== currentIndex && fob==='b', flipInX: fob==='u' && showTerm===true, flipOutX: fob==='u' && showTerm===false}" class="animated flashcard-container">
         <h1 class="term">{{obj.answer}}</h1>
       </div>
   </div>
 </div>
 
   <section class="controls">
-    <img ng-click="showAnswer()" src="../images/up.png" alt="up-arrow" />
     <div class="">
       <img ng-click="previousCard()" src="../images/left.png" alt="left-arrow" />
+      <img ng-click="showAnswer()" id="flip-arrow-button" src="../images/flip-arrow-button.png" alt="up-arrow" />
       <img ng-click="nextCard()" src="../images/right.png" alt="right-arrow" />
     </div>
-    <img src="../images/down.png" alt="down-arrow" />
   </section>
+
+<!-- Add New Card -->
+
+<h2>Add to set</h2>
+<form ng-model="newCard" ng-submit="addCardToSet(newCard)">
+  <input ng-model="newCard.term" type="text" placeholder="Enter term" >
+  <input ng-model="newCard.answer"type="text" placeholder="Enter answer" >
+  <input ng-model="newCard.hint"type="text" placeholder="Enter hint (Optional)">
+  <button type="submit">Submit</button>
+</form>

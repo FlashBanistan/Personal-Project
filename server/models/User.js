@@ -17,8 +17,6 @@ var userSchema = new mongoose.Schema({
   },
   sets: [setSchema],//$push, $pull for working with arrays
   favorites: [{type: mongoose.Schema.ObjectId, ref: 'Flashcard'}]
-
-
 });
 
 userSchema.pre('save', function(next) {

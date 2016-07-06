@@ -10,6 +10,4 @@ module.exports = new mongoose.Schema({
     type: String,
   },
   flashcards: [{type: mongoose.Schema.ObjectId, ref: 'Flashcard'}]
-
-
 });

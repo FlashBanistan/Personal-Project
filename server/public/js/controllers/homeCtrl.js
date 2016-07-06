@@ -23,7 +23,6 @@ angular.module('FlashCards').controller('homeCtrl', function($scope, $state, log
   $scope.updateUsernamePassword = function(user, userId){
     var userId = $scope.id;
     userService.updateUser(user, userId).then(function(response){
-      alert("Profile Updated");
     });
     };
 
