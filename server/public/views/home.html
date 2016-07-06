@@ -17,7 +17,7 @@
       <div id="home-mySets">
         <h2>My Sets</h2>
         <ul ng-repeat="set in sets">
-          <li ng-click="goToState(set)">{{set.setName}}</li>
+          <li ui-sref="mySet({setId: set._id})">{{set.setName}}</li>
         </ul>
         <form ng-model="newSet">
           <input ng-model="newSet.setName" type="text" placeholder="enter set name">

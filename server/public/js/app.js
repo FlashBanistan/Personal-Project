@@ -15,6 +15,11 @@ angular.module('FlashCards', ['ui.router', 'ngAnimate']).config(function($stateP
     templateUrl: '../views/myset.html',
     controller: 'mySetCtrl',
     params: { obj: null},
+    resolve:{
+      thisSet:['flashcard', '$stateParams', function(flashcard, $stateParams){
+        return flashcard.getUserWithSetId($stateParams.setId);
+      }]
+    }
   })
   .state('browse', {
     url: '/browse',

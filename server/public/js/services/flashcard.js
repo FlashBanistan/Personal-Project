@@ -44,6 +44,13 @@ angular.module('FlashCards').service('flashcard', function($http, $q){
     }).then(function(response){
       return response;
     })
+  };
+
+  this.getUserWithSetId = function(setId){
+    return $http({
+      method: "GET",
+      url: "/api/sets/" + setId
+    })
   }
 
 

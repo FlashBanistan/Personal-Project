@@ -26,10 +26,10 @@
 
 <!-- Add New Card -->
 
-<h2>Add to set</h2>
+<h2>Add new card to set</h2>
 <form ng-model="newCard" ng-submit="addCardToSet(newCard)">
-  <input ng-model="newCard.term" type="text" placeholder="Enter term" >
-  <input ng-model="newCard.answer"type="text" placeholder="Enter answer" >
+  <input ng-model="newCard.term" type="text" placeholder="Enter term" required>
+  <input ng-model="newCard.answer"type="text" placeholder="Enter answer" required>
   <input ng-model="newCard.hint"type="text" placeholder="Enter hint (Optional)">
   <button type="submit">Submit</button>
 </form>

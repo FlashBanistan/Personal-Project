@@ -9,6 +9,7 @@ var app = express();
 //Controllers//
 var FlashCardsCtrl = require('./controllers/FlashCardsCtrl.js');
 var UserCtrl = require('./controllers/UserCtrl.js');
+var SetCtrl = require('./controllers/SetCtrl.js');
 //Policies//
 var isAuthed = function(req, res, next){
   if(!req.isAuthenticated()) return res.status(401).send();
@@ -45,6 +46,8 @@ app.get('/api/user/:id', UserCtrl.getUserById);
 app.get('/me', isAuthed, UserCtrl.me);
 app.put('/api/user/:id', UserCtrl.updateUserById);
 app.put('/api/user/createNewSet/:id', UserCtrl.createSetOnUser);
+//Set endpoints
+app.get('/api/sets/:id', SetCtrl.getSetWithSetId);
 //Connect to mongo with FlashCards as name of db
 mongoose.connect('mongodb://localhost/FlashCards');
 //Create node server
