@@ -10,7 +10,7 @@ module.exports = {
         return res.send(err);
       }
       else{
-        UserModel.findOneAndUpdate({'sets._id':req.body.setId},{$push:{'sets.$.flashcards' : newFlashcard._id}}, function(err1, response){
+        UserModel.findOneAndUpdate({'sets._id':req.body.setId},{$push:{'sets.$.flashcards' : newFlashcard._id}}).populate('sets.flashcards').exec(function(err1, response){
           return res.send(response);
         })
       }

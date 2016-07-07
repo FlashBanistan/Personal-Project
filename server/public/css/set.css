@@ -1,3 +1,9 @@
+#myset-header{
+  width: 100%;
+  height: 100px;
+  background-color: maroon;
+  margin-bottom: 25px;
+}
 .body-container{
   display: flex;
   flex-direction: column;
@@ -8,11 +14,12 @@
   height: 310px;
   width: 510px;
   display: flex;
-  flex-direction: row;
+
   justify-content: center;
   align-items: center;
   position: absolute;
   left: calc(50vw - 255px);
+  border: 1px solid black;
 }
 .set-name{
   font-size: 60px;
@@ -21,11 +28,25 @@
 .set-description{
   font-size: 20px;
 }
-.term{
+#term{
   font-size: 75px;
 }
 .wrapper{
   position: relative;
   height: 310px;
   width: 100vw;
+}
+#definition{
+  font-size: 40px;
+}
+#flip-arrow-button{
+  height: 75px;
+  width: 75px;
+  transform: rotate(-95deg);
+}
+.controls{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid black;
 }
