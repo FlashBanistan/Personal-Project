@@ -18,13 +18,11 @@
   align-items: center;
   width: 30%;
   height: 670px;
-  background-color: lightgrey;
   border: 1px solid black;
 }
 .home-createSet{
   width: 70%;
   height: 670px;
-  background-color: lightgrey;
   border: 1px solid black;
 }
 #home-accountInfo{
@@ -35,6 +33,10 @@
   padding-top: 50px;
   padding-bottom: 50px;
 }
+#home-updateButton{
+  color: maroon;
+  background-color: lightgrey;
+}
 #home-createAndManageSet{
   text-align: center;
   font-family: Orbitron;
@@ -43,7 +45,13 @@
   display: flex;
   flex-direction: row;
 }
-#home-mySets{
+#home-mySetsContainer{
   width: 100%;
-  border: 1px solid black;
+}
+#home-setName{
+  font-size: 20px;
+  color: #bbc920;
+}
+#home-setDescription{
+  font-size: 10px;
 }

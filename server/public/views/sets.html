@@ -1,18 +1,25 @@
 <menu-bar></menu-bar>
+<div id="myset-header"></div>
 
 <section class="main-body">
   <section class="results-container">
     <div class="search-results">
-      <ul class="results-list">
+      <ul class="results-list" id="wid">
         <li ng-repeat='obj in sets' ui-sref='set({setId: obj.fcsid})'>
-          <ul class>
-            {{obj.title}}
-          </ul>
           <ul>
-            {{obj.total_flashcards}}<br></br>
+            {{obj.title}}, {{obj.total_flashcards}}
           </ul>
         </li>
       </ul>
     </div>
   </section>
 </section>
+
+
+<!-- <section class="results-container">
+  <div class="search-results">
+    <ul id="wid" class="results-list">
+      <li ng-repeat='name in categories' ui-sref='sets({nameId: name.id})'>{{name.category}}</li>
+    </ul>
+  </div>
+</section> -->

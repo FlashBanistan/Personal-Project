@@ -20,7 +20,7 @@ angular.module('FlashCards').controller('homeCtrl', function($scope, $state, log
     $state.go("mySet", {obj: set});
   }
 
-  $scope.updateUsernamePassword = function(user, userId){
+  $scope.updateUsernameEmail = function(user, userId){
     var userId = $scope.id;
     userService.updateUser(user, userId).then(function(response){
     });

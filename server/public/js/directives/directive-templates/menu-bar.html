@@ -3,6 +3,12 @@
     <img id="logo" src="./images/logo.png" alt="logo" ui-sref="landing" />
     <p id="site-name">Flashcards DB</p>
   </div>
+
+  <form ng-submit="onFormSubmit(searchTerm)">
+    <input ng-model='searchTerm' placeholder="Search by category">
+  </form>
+
+
   <div class="right">
     <div class="dropdown">
       <img src="./images/hamburger.png" alt="menu" onclick="myFunction()" class="hamburger"/>

@@ -1,5 +1,5 @@
-#search-form{
-    position: absolute;
-    right: 50%;
-    left: 45%;
+#wid {
+-moz-column-width: 300px;
+-webkit-column-width: 300px;
+column-width: 300px;
 }

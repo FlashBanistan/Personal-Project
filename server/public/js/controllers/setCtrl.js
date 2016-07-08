@@ -1,11 +1,10 @@
 angular.module('FlashCards').controller('setCtrl', function($scope, flashcard, set){
   $scope.currentIndex = 0;
   $scope.currentFlashcard = $scope.currentIndex+1;
-  $scope.showTerm = true;
+  $scope.showTerm = false;
   $scope.showDefinition = false;
   $scope.set = set;
   $scope.flashcards = set.flashcards;
-  console.log($scope.set);
 
   $scope.nextCard = function(){
     if($scope.currentFlashcard<$scope.flashcards.length){
@@ -33,16 +32,4 @@ angular.module('FlashCards').controller('setCtrl', function($scope, flashcard, s
     }
   }
 
-
-
 });
-
-
-  // $scope.showAnswer = function(){
-  //   $scope.fob = 'u';
-  //   if($scope.showTerm){
-  //     $scope.showTerm = false;
-  //   }
-  //   else{
-  //     $scope.showTerm = true;
-  //   }

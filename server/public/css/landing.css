@@ -16,11 +16,27 @@
 }
 #ditchThePencil{
   font-size: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  line-height: 10px;
+}
+#pencil{
+  font-size: 50px;
+  margin-bottom: 60px;
+  line-height: 10px;
 }
 #makeStudyingEasier{
   margin-bottom: 10px;
   font-size: 20px;
+}
+#landing-siteName{
+  font-size: 50px;
+  font-family: Orbitron;
+  font-weight: bold;
+  background: -webkit-linear-gradient(#8c8d92, #cbccce, #8c8d92);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 38px 38px;
+  margin-bottom: 40px;
 }
 #orSignin{
   margin-top: 20px;

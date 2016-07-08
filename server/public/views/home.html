@@ -1,27 +1,29 @@
 <menu-bar></menu-bar>
 
-<h1 id="home-greeting">Welcome to your account {{name}}</h1>
+<h1 id="home-greeting">Welcome to your account, {{name}}</h1>
 <div id="home-header"></div>
 <div class="home-update_create-container">
   <form ng-model="user" class="home-editAccount">
     <h1 id="home-accountInfo">Account Information</h1>
     <p id="home-accountProperty">Name: <input ng-model="user.name" ng-value="name" type="text" required></p>
     <p id="home-accountProperty">Email: <input ng-model="user.email" ng-value="email" type="text" required></p>
-    <button  ng-click="updateUsernamePassword(user)" id="home-update" type="button">Update Name/Email</button>
+    <button  ng-click="updateUsernameEmail(user)" id="home-updateButton" type="button">Update Name/Email</button>
     <p id="home-accountProperty">Password: <input ng-model="user.password" type="password" required></p>
-    <button id="home-update" type="button">Update Password</button>
+    <button id="home-updateButton" type="button">Update Password</button>
   </form>
   <div class="home-createSet">
-    <h1 id="home-createAndManageSet">Create/Manage Sets</h1>
+    <h1 id="home-createAndManageSet">Create/View Sets</h1>
     <div class="home-mySetsCreateSetContainer">
-      <div id="home-mySets">
+      <div id="home-mySetsContainer">
         <h2>My Sets</h2>
         <ul ng-repeat="set in sets">
-          <li ui-sref="mySet({setId: set._id})">{{set.setName}}</li>
+          <li ui-sref="mySet({setId: set._id})" id="home-setName">{{set.setName}}</li>
+          <li id="setDescription">{{set.setDescription}}</li>
         </ul>
         <form ng-model="newSet">
-          <input ng-model="newSet.setName" type="text" placeholder="enter set name">
-          <button ng-click="createNewSet(newSet)" type="button">Add Set</button>
+          <input ng-model="newSet.setName" type="text" placeholder="enter set name" required>
+          <input ng-model="newSet.setDescription" type="text" placeholder="enter set description">
+          <button ng-click="createNewSet(newSet)" id="home-updateButton" type="button">Add Set</button>
         </form>
       </div>
     </div>

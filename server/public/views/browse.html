@@ -1,14 +1,11 @@
 <menu-bar></menu-bar>
+<div id="myset-header"></div>
 
-<div id="search-form">
-  <form ng-submit='getCategories(searchTerm)'>
-    <input ng-model='searchTerm' placeholder="Search Categories">
-  </form>
-</div>
+
 
   <section class="results-container">
     <div class="search-results">
-      <ul class="results-list">
+      <ul id="wid" class="results-list">
         <li ng-repeat='name in categories' ui-sref='sets({nameId: name.id})'>{{name.category}}</li>
       </ul>
     </div>

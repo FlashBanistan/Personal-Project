@@ -1,11 +1,7 @@
-angular.module('FlashCards').controller('browseCtrl', function($scope, flashcard){
+angular.module('FlashCards').controller('browseCtrl', function($scope, flashcard, $state, searchTerm){
 
-  $scope.getCategories = function(searchTerm){
-     flashcard.getCategoriesBySearch(searchTerm)
-     .then(function(results){
-       $scope.categories = results;
-     })
-  }
+$scope.categories = searchTerm;
+
 
 
 

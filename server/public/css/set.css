@@ -14,12 +14,11 @@
   height: 310px;
   width: 510px;
   display: flex;
-
+  overflow-y: auto;
   justify-content: center;
   align-items: center;
   position: absolute;
   left: calc(50vw - 255px);
-  border: 1px solid black;
 }
 .set-name{
   font-size: 60px;
@@ -28,16 +27,20 @@
 .set-description{
   font-size: 20px;
 }
-#term{
-  font-size: 75px;
-}
 .wrapper{
   position: relative;
   height: 310px;
   width: 100vw;
 }
+#term{
+  font-size: 60px;
+  text-align: center;
+  margin-left: 15px;
+}
 #definition{
   font-size: 40px;
+  text-align: center;
+  margin-left: 15px;
 }
 #flip-arrow-button{
   height: 75px;

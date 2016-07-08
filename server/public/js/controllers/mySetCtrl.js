@@ -1,7 +1,7 @@
 angular.module('FlashCards').controller('mySetCtrl', function($scope, $state, $stateParams, flashcard, thisSet){
   $scope.currentIndex = 0;
   $scope.currentFlashcard = $scope.currentIndex+1;
-  $scope.showTerm = true;
+  $scope.showTerm = false;
   $scope.showDefinition = false;
   $scope.set = thisSet.data;
   $scope.flashcards = thisSet.data.flashcards;

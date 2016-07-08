@@ -8,7 +8,7 @@
     <div class="wrapper">
         <div ng-repeat="obj in flashcards track by $index">
           <div ng-class="{slideInLeft: $index===currentIndex && fob==='f', fadeOutRight: $index !== currentIndex && fob==='f', slideInRight: $index===currentIndex && fob==='b', fadeOutLeft: $index !== currentIndex && fob==='b', flipOutX: fob==='u' && showTerm===true, flipInX: fob==='u' && showTerm===false}" ng-show="$index === currentIndex && showTerm===false" class="animated flashcard-container" >
-              <h1 id="term">{{obj.term}}</h1>
+            <h1 id="term">{{obj.term}}</h1>
           </div>
           <div ng-show="$index===currentIndex && showTerm===true" ng-class="{slideInLeft: $index===currentIndex && fob==='f', fadeOutRight: $index !== currentIndex && fob==='f', slideInRight: $index===currentIndex && fob==='b', fadeOutLeft: $index !== currentIndex && fob==='b', flipInX: fob==='u' && showTerm===true, flipOutX: fob==='u' && showTerm===false}" class="animated flashcard-container">
             <h1 id="definition">{{obj.definition}}</h1>
@@ -23,4 +23,3 @@
     <img ng-click="nextCard()" src="../images/right.png" alt="right-arrow" />
   </div>
 </section>
-<!-- /////////////////////////////////////////////////////// -->

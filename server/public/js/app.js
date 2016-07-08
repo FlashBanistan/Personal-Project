@@ -22,9 +22,14 @@ angular.module('FlashCards', ['ui.router', 'ngAnimate']).config(function($stateP
     }
   })
   .state('browse', {
-    url: '/browse',
+    url: '/browse/:searchTerm',
     templateUrl: '../views/browse.html',
-    controller: 'browseCtrl'
+    controller: 'browseCtrl',
+    resolve:{
+      searchTerm: ['flashcard', '$stateParams', function(flashcard, $stateParams){
+        return flashcard.getCategoriesBySearch($stateParams.searchTerm);
+      }]
+    }
   })
   .state('sets', {
     url: '/browse/sets/:nameId',
@@ -37,7 +42,7 @@ angular.module('FlashCards', ['ui.router', 'ngAnimate']).config(function($stateP
     controller: 'setsCtrl',
   })
   .state('set', {
-    url: '/browse/sets/set/:setId',
+    url: '/browse/set/:setId',
     resolve:{
       set: ['flashcard', '$stateParams', function(flashcard, $stateParams){
         return flashcard.getSetById($stateParams.setId);
