@@ -1,4 +1,4 @@
-angular.module('FlashCards').controller('homeCtrl', function($scope, $state, loginService, userService){
+angular.module('FlashCards').controller('homeCtrl', function($scope, $window, $state, loginService, userService){
 //IIFE to pull the user data every time pages refreshes
   (function(){
     loginService.getCurrentUser().then(function(response){
@@ -22,14 +22,18 @@ angular.module('FlashCards').controller('homeCtrl', function($scope, $state, log
 
   $scope.updateUsernameEmail = function(user, userId){
     var userId = $scope.id;
+    if(user.name) $scope.name = user.name;
+    if(user.email) $scope.email = user.email;
     userService.updateUser(user, userId).then(function(response){
     });
     };
 
   $scope.createNewSet = function(newSet, userId){
     var userId = $scope.id;
+    $scope.sets.push(newSet);
     userService.createSetOnUser(newSet, userId).then(function(response){
-      alert("New set created");
+      $scope.newSet = {};
+      $window.document.getElementById('home-newSetNameInput').focus();
     });
   };
 

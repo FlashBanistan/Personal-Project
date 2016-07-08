@@ -2,7 +2,7 @@
 <section class="landing-img-container">
   <div id="landing-background-image">
     <h1 id="ditchThePencil">Ditch the</h1>
-    <p class="animated hinge"id="pencil">pencil</p>
+    <p id="pencil">pencil</p>
     <p id="makeStudyingEasier">Make studying easier with</p>
     <p id="landing-siteName">Flashcards DB</p>
       <form ng-submit="signup(newUser)">
@@ -36,13 +36,33 @@
         </div>
     </div>
 </div>
-<!--  -->
+<!-- /Modal -->
+
   <div class="o-auth-container">
       <img class="o-auth-buttons" src="../images/facebook.svg" alt="facebook sign in"/>
       <img class="o-auth-buttons" src="../images/twitter.svg" alt="twitter sign in"/>
     </div>
   </div>
 </section>
-<section class="landing-footer">
 
-</section>
+<!-- Footer -->
+<section class="landing-footer"></section>
+<!-- /Footer -->
+
+
+
+
+
+
+<!-- SCRIPTS -->
+<script>
+  $(document).ready(function(){
+
+    $("#pencil").addClass("animated hinge").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $(this).removeClass("animated hinge");
+      $(this).addClass('animated fadeIn');
+    });
+
+
+  });
+</script>

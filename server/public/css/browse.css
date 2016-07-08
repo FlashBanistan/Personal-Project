@@ -3,3 +3,7 @@
 -webkit-column-width: 300px;
 column-width: 300px;
 }
+.results-container{
+  margin-top: 100px;
+  margin-left: 200px;
+}

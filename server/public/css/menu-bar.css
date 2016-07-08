@@ -3,6 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(#f4f2eb, white, #f4f2eb );
+  box-shadow: 5px 5px 5px lightgrey;
 }
 .left{
   display: flex;
@@ -16,30 +18,38 @@
 }
 
 #logo{
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
   padding: 10px;
 }
 
 #site-name{
-  font-size: 30px;
+  font-size: 40px;
   font-family: Orbitron;
   font-weight: bold;
-  background: -webkit-linear-gradient(#8c8d92, #cbccce, #8c8d92);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 23px 23px;
+}
+#menuBar-searchBox{
+  border-radius: 5px;
+  height: 30px;
+}
+#menuBar-searchBox:focus{
+    outline: none;
+}
+#search-icon{
+  height: 25px;
+  width: 25px;
 }
 
 
 /* ////////////////////////Dropdown Button //////////////////////////*/
 .hamburger {
-    width: 38px;
-    height: 38px;
+    width: 45px;
+    height: 45px;
+    margin-left: 20px;
 }
 .hamburger:hover{
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
 }
 .dropdown {
     position: relative;

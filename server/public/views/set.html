@@ -3,8 +3,8 @@
 
 <section class="body-container">
     <h1 class="set-name">{{set.title}}</h1>
-    <h2 class="set-description">...{{set.description}}</h2>
-    <p>{{currentFlashcard}}/{{flashcards.length}}</p>
+    <h2 ng-show="set.description.length > 0" class="set-description">...{{set.description}}</h2>
+    <p ng-show="flashcards.length > 0">{{currentFlashcard}}/{{flashcards.length}}</p>
     <div class="wrapper">
         <div ng-repeat="obj in flashcards track by $index">
           <div ng-class="{slideInLeft: $index===currentIndex && fob==='f', fadeOutRight: $index !== currentIndex && fob==='f', slideInRight: $index===currentIndex && fob==='b', fadeOutLeft: $index !== currentIndex && fob==='b', flipOutX: fob==='u' && showTerm===true, flipInX: fob==='u' && showTerm===false}" ng-show="$index === currentIndex && showTerm===false" class="animated flashcard-container" >
@@ -18,8 +18,11 @@
 
 <section class="controls">
   <div class="">
-    <img ng-click="previousCard()" src="../images/left.png" alt="left-arrow" />
+    <input ng-model="autoplay" id="autoplayCheckbox" type="checkbox">
+    <label for="autoplayCheckbox">Autoplay</label>
+    <img ng-click="previousCard()" id="left-arrow-button" src="../images/left-right-arrow.png" alt="left-arrow" />
     <img ng-click="showAnswer()" id="flip-arrow-button" src="../images/flip-arrow-button.png" alt="up-arrow" />
-    <img ng-click="nextCard()" src="../images/right.png" alt="right-arrow" />
+    <img ng-click="nextCard()" id="right-arrow-button" src="../images/left-right-arrow.png" alt="right-arrow" />
+    <button ng-click="shuffle(flashcards)" type="button">Shuffle</button>
   </div>
 </section>

@@ -43,9 +43,21 @@
   margin-left: 15px;
 }
 #flip-arrow-button{
-  height: 75px;
-  width: 75px;
-  transform: rotate(-95deg);
+  height: 50px;
+  width: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+#right-arrow-button{
+  transform: rotate(180deg);
+  height: 35px;
+  width: 50px;
+  margin-right: 25px;
+}
+#left-arrow-button{
+  height: 35px;
+  width: 50px;
+  margin-left: 25px;
 }
 .controls{
   display: flex;
