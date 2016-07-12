@@ -1,18 +1,19 @@
 <menu-bar></menu-bar>
 <section class="landing-img-container">
-  <div id="landing-background-image">
-    <h1 id="ditchThePencil">Ditch the</h1>
-    <p id="pencil">pencil</p>
-    <p id="makeStudyingEasier">Make studying easier with</p>
-    <p id="landing-siteName">Flashcards DB</p>
+  <div class="landing-background-image">
+    <h1 class="landing-ditchThePencil">Ditch the</h1>
+    <p class="landing-pencil">pencil</p>
+    <p class="landing-makeStudyingEasier">Make studying easier with</p>
+    <p class="landing-siteName">Flashcards DB</p>
       <form ng-submit="signup(newUser)">
+        <input ng-model="newUser.name" type="text" placeholder="Name" class="signup-input" id="signup-name">
         <div>
           <input ng-model="newUser.email" class="signup-input" type="email" placeholder="Email" required/>
           <input ng-model="newUser.password" class="signup-input" type="password" placeholder="Password" required/>
         </div>
         <button ng-submit="signup(newUser)" class="signup-button" type="submit">Sign up for free</button>
       </form>
-      <p id="orSignin">Or sign in using</p>
+      <p id="landing-orSignin">Or sign in using</p>
       <button type="button" id="email-password-button" data-toggle="modal" data-target="#myModal">Email and Password</button>
 
   <!-- Modal -->
@@ -58,7 +59,7 @@
 <script>
   $(document).ready(function(){
 
-    $("#pencil").addClass("animated hinge").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+    $(".landing-pencil").addClass("animated hinge").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
       $(this).removeClass("animated hinge");
       $(this).addClass('animated fadeIn');
     });

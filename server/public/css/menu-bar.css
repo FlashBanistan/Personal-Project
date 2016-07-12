@@ -3,8 +3,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(#f4f2eb, white, #f4f2eb );
-  box-shadow: 5px 5px 5px lightgrey;
+  background-color: #fdfcf7;
+  border-bottom: 20px solid #7f2824;
+  border-top: 1px solid #7f2824;
 }
 .left{
   display: flex;
@@ -27,6 +28,7 @@
   font-size: 40px;
   font-family: Orbitron;
   font-weight: bold;
+  color: #252525;
 }
 #menuBar-searchBox{
   border-radius: 5px;

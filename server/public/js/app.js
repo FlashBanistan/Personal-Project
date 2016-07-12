@@ -9,6 +9,21 @@ angular.module('FlashCards', ['ui.router', 'ngAnimate']).config(function($stateP
     url: '/home',
     templateUrl: '../views/home.html',
     controller: 'homeCtrl',
+    resolve: {
+      user: function(loginService, $state) {
+        return loginService.getCurrentUser().then(function(response) {
+          if (!response.data){
+            $state.go('landing');
+          }
+          else {
+            return response.data;
+          }
+        }).catch(function(err) {
+          $state.go('landing');
+          alert('You need to login to access this page');
+        });
+      }
+    }
   })
   .state('mySet', {
     url: '/home/myset/:setId',
@@ -16,6 +31,19 @@ angular.module('FlashCards', ['ui.router', 'ngAnimate']).config(function($stateP
     controller: 'mySetCtrl',
     params: { obj: null},
     resolve:{
+      user: function(loginService, $state) {
+        return loginService.getCurrentUser().then(function(response) {
+          if (!response.data){
+            $state.go('landing');
+          }
+          else {
+            return response.data;
+          }
+        }).catch(function(err) {
+          $state.go('landing');
+          alert('You need to login to access this page');
+        });
+      },
       thisSet:['flashcard', '$stateParams', function(flashcard, $stateParams){
         return flashcard.getUserWithSetId($stateParams.setId);
       }]

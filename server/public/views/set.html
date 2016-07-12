@@ -4,14 +4,34 @@
 <section class="body-container">
     <h1 class="set-name">{{set.title}}</h1>
     <h2 ng-show="set.description.length > 0" class="set-description">...{{set.description}}</h2>
-    <p ng-show="flashcards.length > 0">{{currentFlashcard}}/{{flashcards.length}}</p>
+    <h2 ng-show="flashcards.length > 0">{{currentFlashcard}}/{{flashcards.length}}</h2>
     <div class="wrapper">
         <div ng-repeat="obj in flashcards track by $index">
-          <div ng-class="{slideInLeft: $index===currentIndex && fob==='f', fadeOutRight: $index !== currentIndex && fob==='f', slideInRight: $index===currentIndex && fob==='b', fadeOutLeft: $index !== currentIndex && fob==='b', flipOutX: fob==='u' && showTerm===true, flipInX: fob==='u' && showTerm===false}" ng-show="$index === currentIndex && showTerm===false" class="animated flashcard-container" >
-            <h1 id="term">{{obj.term}}</h1>
+          <div>
+            <h1 ng-class="{
+              zoomInLeft: $index===currentIndex && fob==='f',
+              zoomOutRight: $index !== currentIndex && fob==='f',
+              zoomInRight: $index===currentIndex && fob==='b',
+              zoomOutLeft: $index !== currentIndex && fob==='b',
+              flipOutX: fob==='u' && showTerm===true,
+              flipInX: fob==='u' && showTerm===false
+            }"
+             ng-show="$index === currentIndex && showTerm===false"
+             class="animated flashcard-container"
+             id="term">{{obj.term}}</h1>
           </div>
-          <div ng-show="$index===currentIndex && showTerm===true" ng-class="{slideInLeft: $index===currentIndex && fob==='f', fadeOutRight: $index !== currentIndex && fob==='f', slideInRight: $index===currentIndex && fob==='b', fadeOutLeft: $index !== currentIndex && fob==='b', flipInX: fob==='u' && showTerm===true, flipOutX: fob==='u' && showTerm===false}" class="animated flashcard-container">
-            <h1 id="definition">{{obj.definition}}</h1>
+          <div>
+            <h1 ng-class="{
+                zoomInLeft: $index===currentIndex && fob==='f',
+                zoomOutRight: $index !== currentIndex && fob==='f',
+                zoomInRight: $index===currentIndex && fob==='b',
+                zoomOutLeft: $index !== currentIndex && fob==='b',
+                flipInX: fob==='u' && showTerm===true,
+                flipOutX: fob==='u' && showTerm===false
+              }"
+              ng-show="$index===currentIndex && showTerm===true"
+              class="animated flashcard-container"
+              id="definition">{{obj.definition}}</h1>
           </div>
       </div>
     </div>
