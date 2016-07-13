@@ -5,6 +5,7 @@ var cors = require('cors');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var passport = require('./services/passport');
+var serverConfig = require('./../server_config.js');
 var app = express();
 //Controllers//
 var FlashCardsCtrl = require('./controllers/FlashCardsCtrl.js');
@@ -51,7 +52,7 @@ app.get('/api/sets/:id', SetCtrl.getSetWithSetId);
 //Connect to mongo with FlashCards as name of db
 mongoose.connect('mongodb://localhost/FlashCards');
 //Create node server
-var port = 3000;
+var port = serverConfig.serverPort;
 app.listen(port, function(){
   console.log('Listening on port ', port);
 });
