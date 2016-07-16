@@ -1,68 +1,60 @@
 angular.module('FlashCards').controller('mySetCtrl', function($scope, $state, $stateParams, $window, flashcard, thisSet){
   $scope.currentIndex = 0;
   $scope.currentFlashcard = $scope.currentIndex+1;
-  $scope.showTerm = false;
-  $scope.showDefinition = false;
   $scope.set = thisSet.data;
   $scope.flashcards = thisSet.data.flashcards;
+  $scope.p = false;
+  $scope.fob = 'f';
 
   $scope.nextCard = function(){
     if($scope.currentFlashcard<$scope.flashcards.length){
-      $scope.fob = "f";
       $scope.currentIndex++;
       $scope.currentFlashcard++;
-      $scope.showTerm = false;
     }
     else if($scope.currentFlashcard === $scope.flashcards.length) {
       $scope.currentIndex = 0;
       $scope.currentFlashcard = $scope.currentIndex+1;
-      $scope.showTerm = false;
-      $scope.showDefinition = false;
+    }
+    if($scope.p === true){
+      document.querySelector("#flip-container").classList.toggle("flip");
+      $scope.p = false;
     }
     $scope.$apply();
   }
   $scope.previousCard = function(){
     if($scope.currentIndex>0){
-      $scope.fob = "b";
       $scope.currentIndex--;
       $scope.currentFlashcard--;
-      $scope.showTerm = false;
     }
     else if($scope.currentFlashcard === 1){
       $scope.currentIndex = $scope.flashcards.length-1;
       $scope.currentFlashcard = $scope.flashcards.length;
-      $scope.showTerm = false;
-      $scope.showDefinition = false;
+    }
+    if($scope.p === true){
+      document.querySelector("#flip-container").classList.toggle("flip");
+      $scope.p = false;
     }
   }
   $scope.showAnswer = function(){
-    $scope.fob = 'u';
-    if($scope.showTerm){
-      $scope.showTerm = false;
+    if($scope.p === true) $scope.p = false;
+    else $scope.p = true;
+    document.querySelector("#flip-container").classList.toggle("flip");
+  }
+  $window.onkeyup = function(event){
+    if(event.keyCode === 39){
+      $scope.nextCard();
     }
-    else{
-      $scope.showTerm = true;
+    else if(event.keyCode === 38){
+      $scope.showAnswer();
     }
-    $scope.$apply();
+    else if(event.keyCode === 40){
+      $scope.showAnswer();
+    }
+    else if(event.keyCode === 37){
+      $scope.previousCard();
+    }
+    $scope.$apply()
   }
-
-$window.onkeyup = function(event){
-  if(event.keyCode === 39){
-    $scope.nextCard();
-  }
-  else if(event.keyCode === 38){
-    $scope.showAnswer();
-  }
-  else if(event.keyCode === 40){
-    $scope.showAnswer();
-  }
-  else if(event.keyCode === 37){
-    $scope.previousCard();
-  }
-  $scope.$apply()
-}
-
-  // Requests //
   $scope.addCardToSet = function(newCard){
     var setId = $scope.set._id;
     flashcard.addCardToSet(newCard, setId).then(function(response){
@@ -74,8 +66,6 @@ $window.onkeyup = function(event){
 
     })
   }
-
-
   $scope.shuffle = function(array){
     var currentIndex = array.length, temporaryValue, randomIndex;
     while (0 !== currentIndex) {
@@ -93,12 +83,12 @@ $window.onkeyup = function(event){
     return array;
   }
 
-  $scope.fob = 'f';
   setInterval(function(){
     if(!$scope.autoplay) return;
     if($scope.fob === 'f' || $scope.fob === 'b'){
       $scope.showAnswer();
-    }else {
+    }
+    else{
       $scope.nextCard();
     }
   }, 3000)

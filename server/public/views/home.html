@@ -25,7 +25,6 @@
         <div id="home-mySetsContainer">
           <ul ng-repeat="set in sets | filter: filterSets track by $index">
             <li ui-sref="mySet({setId: set._id})" id="home-setName">{{set.setName}}</li>
-            <li id="setDescription">{{set.setDescription}}</li>
           </ul>
         </div>
 

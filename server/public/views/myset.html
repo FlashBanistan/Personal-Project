@@ -5,33 +5,33 @@
       <h1 class="set-name">{{set.setName}}</h1>
       <h2 ng-show="set.setDescription > 0" class="set-description">...{{set.setDescription}}</h2>
       <h2 ng-show="flashcards.length > 0">{{currentFlashcard}}/{{flashcards.length}}</h2>
-  <div class="wrapper">
-      <div ng-repeat="obj in flashcards track by $index">
-        <div  >
-            <h1 ng-class="{
+
+  <div id="flip-container" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+    <div class="flipper" ng-repeat="obj in flashcards track by $index">
+      <div class="front">
+        <h1
+        ng-class="{
               zoomInLeft: $index===currentIndex && fob==='f',
               zoomOutRight: $index !== currentIndex && fob==='f',
               zoomInRight: $index===currentIndex && fob==='b',
               zoomOutLeft: $index !== currentIndex && fob==='b',
-              flipOutX: fob==='u' && showTerm===true,
-              flipInX: fob==='u' && showTerm===false
             }"
-            ng-show="$index === currentIndex && showTerm===false" class="animated flashcard-container"
-            id="term">{{obj.term}}</h1>
-        </div>
-        <div >
-          <h1 ng-class="{
-              zoomInLeft: $index===currentIndex && fob==='f',
-              zoomOutRight: $index !== currentIndex && fob==='f',
-              zoomInRight: $index===currentIndex && fob==='b',
-              zoomOutLeft: $index !== currentIndex && fob==='b',
-              flipInX: fob==='u' && showTerm===true,
-              flipOutX: fob==='u' && showTerm===false
-            }"
-            ng-show="$index===currentIndex && showTerm===true"
             class="animated flashcard-container"
-            id="definition">{{obj.answer}}</h1>
-        </div>
+            id="term">{{obj.term}}
+        </h1>
+      </div>
+      <div class="back">
+        <h2
+          ng-class="{
+              zoomInLeft: $index===currentIndex && fob==='f',
+              zoomOutRight: $index !== currentIndex && fob==='f',
+              zoomInRight: $index===currentIndex && fob==='b',
+              zoomOutLeft: $index !== currentIndex && fob==='b',
+            }"
+            class="animated flashcard-container"
+            id="definition">{{obj.answer}}
+          <h2>
+      </div>
     </div>
   </div>
 
@@ -60,7 +60,6 @@
 
   <!-- Scripts -->
   <script>
-
   </script>
   <!-- /Scripts -->
 </section>

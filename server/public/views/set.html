@@ -1,48 +1,56 @@
 <menu-bar></menu-bar>
-<div id="myset-header"></div>
 
-<section class="body-container">
-    <h1 class="set-name">{{set.title}}</h1>
-    <h2 ng-show="set.description.length > 0" class="set-description">...{{set.description}}</h2>
-    <h2 ng-show="flashcards.length > 0">{{currentFlashcard}}/{{flashcards.length}}</h2>
-    <div class="wrapper">
-        <div ng-repeat="obj in flashcards track by $index">
-          <div>
-            <h1 ng-class="{
+<section class="mySet-body-wrapper">
+  <section class="body-container">
+      <h1 class="set-name">{{set.title}}</h1>
+      <h2 ng-show="set.setDescription > 0" class="set-description">...{{set.description}}</h2>
+      <h2 ng-show="flashcards.length > 0">{{currentFlashcard}}/{{flashcards.length}}</h2>
+
+  <div id="flip-container" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+    <div class="flipper" ng-repeat="obj in flashcards track by $index">
+      <div class="front">
+        <h1
+        ng-class="{
               zoomInLeft: $index===currentIndex && fob==='f',
               zoomOutRight: $index !== currentIndex && fob==='f',
               zoomInRight: $index===currentIndex && fob==='b',
               zoomOutLeft: $index !== currentIndex && fob==='b',
-              flipOutX: fob==='u' && showTerm===true,
-              flipInX: fob==='u' && showTerm===false
             }"
-             ng-show="$index === currentIndex && showTerm===false"
-             class="animated flashcard-container"
-             id="term">{{obj.term}}</h1>
-          </div>
-          <div>
-            <h1 ng-class="{
-                zoomInLeft: $index===currentIndex && fob==='f',
-                zoomOutRight: $index !== currentIndex && fob==='f',
-                zoomInRight: $index===currentIndex && fob==='b',
-                zoomOutLeft: $index !== currentIndex && fob==='b',
-                flipInX: fob==='u' && showTerm===true,
-                flipOutX: fob==='u' && showTerm===false
-              }"
-              ng-show="$index===currentIndex && showTerm===true"
-              class="animated flashcard-container"
-              id="definition">{{obj.definition}}</h1>
-          </div>
+            class="animated flashcard-container"
+            id="term">{{obj.term}}
+        </h1>
+      </div>
+      <div class="back">
+        <h2
+          ng-class="{
+              zoomInLeft: $index===currentIndex && fob==='f',
+              zoomOutRight: $index !== currentIndex && fob==='f',
+              zoomInRight: $index===currentIndex && fob==='b',
+              zoomOutLeft: $index !== currentIndex && fob==='b',
+            }"
+            class="animated flashcard-container"
+            id="definition">{{obj.definition}}
+          <h2>
       </div>
     </div>
-
-<section class="controls">
-  <div class="">
-    <input ng-model="autoplay" id="autoplayCheckbox" type="checkbox">
-    <label for="autoplayCheckbox">Autoplay</label>
-    <img ng-click="previousCard()" id="left-arrow-button" src="../images/left-right-arrow.png" alt="left-arrow" />
-    <img ng-click="showAnswer()" id="flip-arrow-button" src="../images/flip-arrow-button.png" alt="up-arrow" />
-    <img ng-click="nextCard()" id="right-arrow-button" src="../images/left-right-arrow.png" alt="right-arrow" />
-    <button ng-click="shuffle(flashcards)" type="button">Shuffle</button>
   </div>
+
+    <section class="controls">
+      <div class="">
+        <input ng-model="autoplay" id="autoplayCheckbox" type="checkbox">
+        <label for="autoplayCheckbox">Autoplay</label>
+        <img ng-click="previousCard()" id="left-arrow-button" src="../images/left-right-arrow.png" alt="left-arrow" />
+        <img ng-click="showAnswer()" id="flip-arrow-button" src="../images/flip-arrow-button.png" alt="up-arrow" />
+        <img ng-click="nextCard()" id="right-arrow-button" src="../images/left-right-arrow.png" alt="right-arrow" />
+        <button ng-click="shuffle(flashcards)" type="button">Shuffle</button>
+      </div>
+    </section>
+
+    <div id="myset-header"></div>
+
+
+  <!-- Scripts -->
+  <script>
+  </script>
+  <!-- /Scripts -->
 </section>
