@@ -3,6 +3,7 @@ angular.module('FlashCards').controller('mySetCtrl', function($scope, $state, $s
   $scope.currentFlashcard = $scope.currentIndex+1;
   $scope.set = thisSet.data;
   $scope.flashcards = thisSet.data.flashcards;
+  console.log($scope.flashcards);
   $scope.p = false;
   $scope.fob = 'f';
 

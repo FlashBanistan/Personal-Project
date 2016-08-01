@@ -36,7 +36,7 @@ module.exports = {
   },
 
   createSetOnUser: function(req, res){
-    UserModel.findByIdAndUpdate(req.params.id, {$push: {sets: req.body}}, function(err, result){
+    UserModel.findByIdAndUpdate(req.params.id, {$push: {sets: req.body}}, {new: true}, function(err, result){
       if(err) return res.send(err);
       else res.send(result);
     })
