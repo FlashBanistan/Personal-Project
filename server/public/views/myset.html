@@ -7,29 +7,15 @@
       <h2 ng-show="flashcards.length > 0">{{currentFlashcard}}/{{flashcards.length}}</h2>
 
   <div id="flip-container" class="flip-container" ontouchstart="this.classList.toggle('hover');">
-    <div class="flipper" ng-repeat="obj in flashcards track by $index">
+    <div class="flipper">
       <div class="front">
-        <h1
-        ng-class="{
-              zoomInLeft: $index===currentIndex && fob==='f',
-              zoomOutRight: $index !== currentIndex && fob==='f',
-              zoomInRight: $index===currentIndex && fob==='b',
-              zoomOutLeft: $index !== currentIndex && fob==='b',
-            }"
-            class="animated flashcard-container"
-            id="term">{{obj.term}}
+        <h1 class="animated flashcard-container"
+            id="term">{{flashcards[currentIndex].term}}
         </h1>
       </div>
       <div class="back">
-        <h2
-          ng-class="{
-              zoomInLeft: $index===currentIndex && fob==='f',
-              zoomOutRight: $index !== currentIndex && fob==='f',
-              zoomInRight: $index===currentIndex && fob==='b',
-              zoomOutLeft: $index !== currentIndex && fob==='b',
-            }"
-            class="animated flashcard-container"
-            id="definition">{{obj.answer}}
+        <h2 class="animated flashcard-container"
+            id="definition">{{flashcards[currentIndex].answer}}
           <h2>
       </div>
     </div>
