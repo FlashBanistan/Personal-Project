@@ -3,7 +3,6 @@ angular.module('FlashCards').directive('menuBar', function(){
     restrict: "EA",
     templateUrl: './js/directives/directive-templates/menu-bar.html',
     controller: function($scope, $rootScope, flashcard, $state, $http, loginService){
-      $rootScope.loggedIn = true;
       $scope.getCategories = function(searchTerm){
          flashcard.getCategoriesBySearch(searchTerm)
          .then(function(results){
