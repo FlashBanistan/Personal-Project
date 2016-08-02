@@ -38,39 +38,4 @@ angular.module('FlashCards').service('userService', function($http){
       return response;
     })
   }
-
-
 });
-
-
-
-
-
-
-
-// createOrderOnUser: function(req, res){
-//     UserModel.findById(req.params.user_id)
-//     .populate("cart.product")
-//     .exec(function(err, resp){
-//       var userObj = resp;
-//       var userOrder = {};
-//       userOrder.products = userObj.cart;
-//       userOrder.user = req.params.user_id;
-//       var newOrder = new OrderModel(userOrder);
-//       UserModel.findByIdAndUpdate(resp._id, { $pull : {'cart': {} }});
-//       newOrder.save(function(err1, result){
-//         userObj.orders.push(mongoose.Types.ObjectId(newOrder._id));
-//         userObj.save(function(err){});
-//       });
-//
-//       UserModel.update({_id: userObj._id},
-//         {$pull: {"cart": {}}},
-//         {new: true}, function(err2, result2){
-//           if(err){
-//             res.sendStatus(500);
-//           }else{
-//           res.send(result2);
-//           }
-//         })
-//       })
-//   },

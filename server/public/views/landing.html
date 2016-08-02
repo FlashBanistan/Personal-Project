@@ -16,29 +16,6 @@
       <p id="landing-orSignin">Or sign in using</p>
       <button type="button" id="email-password-button" data-toggle="modal" data-target="#myModal">Email and Password</button>
 
-  <!-- Modal -->
-  <div id="myModal" class="modal fade" data-backdrop="">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Sign In</h4>
-            </div>
-            <div class="modal-body">
-              <form ng-submit="login(user)">
-                <p>Email address</p>
-                <input type="email" ng-model="user.email" required/>
-                <p>Password</p>
-                <input type="password" ng-model="user.password" required/>
-                <button id="modal-login-button" ng-submit="login(user)" type="submit">Login</button>
-              </form>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- /Modal -->
-
   <div class="o-auth-container">
       <img class="o-auth-buttons" src="../images/facebook.svg" alt="facebook sign in"/>
       <img class="o-auth-buttons" src="../images/twitter.svg" alt="twitter sign in"/>

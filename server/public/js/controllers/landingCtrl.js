@@ -17,19 +17,4 @@ angular.module('FlashCards').controller('landingCtrl', function($scope, $rootSco
     });
   };
 
-  $scope.login = function(user){
-    loginService.login(user).then(function(response){
-      if(!response.data){
-        alert('User does not exist');
-        $scope.user.password = '';
-      } else{
-        $rootScope.loggedIn = true;
-        $state.go('home');
-      }
-    }).catch(function(err){
-      alert('Unable to login');
-    });
-  };
-
-
 });
