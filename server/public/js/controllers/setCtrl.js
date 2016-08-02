@@ -60,6 +60,13 @@ angular.module('FlashCards').controller('setCtrl', function($scope, $window, fla
     $scope.$apply()
   }
 
+  window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
+
   $scope.shuffle = function(array){
     var currentIndex = array.length, temporaryValue, randomIndex;
     while (0 !== currentIndex) {

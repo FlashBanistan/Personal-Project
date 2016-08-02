@@ -1,12 +1,14 @@
 .home-bodyWrapper{
   background-color: #fdfcf7;
-  border-top: 1px solid black;
+  background-image: url('../images/home/1.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 #home-greeting{
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
   font-family: 'Libre Baskerville', serif;
-  margin-top: 10px;
+  margin-bottom: 40px;
 }
 .home-update_create-container{
   display: flex;
@@ -41,28 +43,40 @@
   padding-top: 50px;
   padding-bottom: 50px;
 }
+#home-accountInfo{
+  font-size: 20px;
+}
 #home-updateButton{
   color: white;
   background-color: #7f2824;
 }
 #home-createAndManageSet{
+  font-size: 20px;
   text-align: center;
 
 }
 .home-mySetsCreateSetContainer{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 #home-mySetsContainer{
-  width: 100%;
-  height: 800px;
-  column-width: 400px;
-  margin-left: 350px;
+  margin-left: 60px;
+  width: 90%;
+  height: 250px;
+
+  column-width: 200px;
+  border: 1px solid orange;
+
 }
 #home-setName{
   font-size: 20px;
   color: black;
   font-family: 'Libre Baskerville', serif;
+}
+#home-setName:hover{
+  color: #7f2824;
+  font-weight: bold;
+  cursor: pointer;
 }
 #home-footer{
   width: 100%;
