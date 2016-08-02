@@ -59,6 +59,12 @@ angular.module('FlashCards').controller('mySetCtrl', function($scope, $state, $s
     }
     $scope.$apply()
   }
+  window.addEventListener("keydown", function(e) {
+    // space and arrow keys
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
   $scope.addCardToSet = function(newCard){
     var setId = $scope.set._id;
     flashcard.addCardToSet(newCard, setId).then(function(response){
