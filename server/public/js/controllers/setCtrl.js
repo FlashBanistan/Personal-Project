@@ -8,6 +8,7 @@ angular.module('FlashCards').controller('setCtrl', function($scope, $window, fla
 
 
   $scope.nextCard = function(){
+    $scope.fob = "f";
     if($scope.currentFlashcard<$scope.flashcards.length){
       $scope.currentIndex++;
       $scope.currentFlashcard++;
@@ -23,6 +24,7 @@ angular.module('FlashCards').controller('setCtrl', function($scope, $window, fla
     $scope.$apply();
   }
   $scope.previousCard = function(){
+    $scope.fob = "b";
     if($scope.currentIndex>0){
       $scope.currentIndex--;
       $scope.currentFlashcard--;
@@ -37,6 +39,7 @@ angular.module('FlashCards').controller('setCtrl', function($scope, $window, fla
     }
   }
   $scope.showAnswer = function(){
+    $scope.fob = "b";
     if($scope.p === true) $scope.p = false;
     else $scope.p = true;
     document.querySelector("#flip-container").classList.toggle("flip");
@@ -76,7 +79,7 @@ angular.module('FlashCards').controller('setCtrl', function($scope, $window, fla
 
   setInterval(function(){
     if(!$scope.autoplay) return;
-    if($scope.fob === 'f' || $scope.fob === 'b'){
+    if($scope.fob === 'f'){
       $scope.showAnswer();
     }
     else{
