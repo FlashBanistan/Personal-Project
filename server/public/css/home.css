@@ -2,33 +2,29 @@
   background-color: #fdfcf7;
   background-image: url('../images/home/1.jpg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  border: 1px solid black;
 }
-#home-greeting{
-  text-align: center;
-  font-size: 40px;
-  font-family: 'Libre Baskerville', serif;
-  margin-bottom: 40px;
-}
+
 .home-update_create-container{
   display: flex;
   justify-content: space-between;
   width: 100%;
-  /*background-color: #F7F7F7;*/
-
 }
 .home-editAccount{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%;
+  width: 26%;
   background-color: #F7F7F7;
   border-right: 1px solid black;
+  margin-top: 50px;
 }
 .home-createSet{
   width: 70%;
   height: 670px;
   overflow-y: auto;
+  margin-top: 50px;
 }
 .home-createSetHeader{
   display: flex;
@@ -39,9 +35,9 @@
   margin-bottom: 20px;
 }
 #home-accountProperty{
-  font-size: 20px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  font-size: 18px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 #home-accountInfo{
   font-size: 20px;
@@ -57,18 +53,12 @@
 }
 .home-mySetsCreateSetContainer{
   display: flex;
-  flex-direction: column;
-}
-#home-mySetsContainer{
-  margin-left: 60px;
-  width: 90%;
-  height: 250px;
-
-  column-width: 200px;
-  border: 1px solid orange;
-
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 #home-setName{
+  padding-left: 40px;
+  padding-top: 10px;
   font-size: 20px;
   color: black;
   font-family: 'Libre Baskerville', serif;
@@ -80,7 +70,7 @@
 }
 #home-footer{
   width: 100%;
-  height: 100vw;
+  height: 200px;
   background-color: #670400;
   margin-bottom: 25px;
 }

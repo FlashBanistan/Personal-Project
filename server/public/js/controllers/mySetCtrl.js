@@ -1,7 +1,7 @@
 angular.module('FlashCards').controller('mySetCtrl', function($scope, $state, $stateParams, $window, flashcard, thisSet){
   $scope.currentIndex = 0;
   $scope.currentFlashcard = $scope.currentIndex+1;
-  $scope.set = thisSet.data;
+  $scope.set = thisSet.data; console.log($scope.set)
   $scope.flashcards = thisSet.data.flashcards;
   console.log($scope.flashcards);
   $scope.p = false;
@@ -101,5 +101,5 @@ angular.module('FlashCards').controller('mySetCtrl', function($scope, $state, $s
     else{
       $scope.nextCard();
     }
-  }, 3000)
+  }, 4000)
 })
