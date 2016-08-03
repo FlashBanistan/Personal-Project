@@ -1,6 +1,5 @@
 <menu-bar></menu-bar>
 <section class='home-bodyWrapper'>
-  <h1 id="home-greeting">Welcome to your account, {{name}}</h1>
   <div class="home-update_create-container">
     <form ng-model="user" class="home-editAccount">
       <h1 id="home-accountInfo">Account Information</h1>
@@ -18,15 +17,14 @@
           <input id="input-margin" ng-model="newSet.setDescription" type="text" placeholder="enter set description">
           <button id="home-updateButton" type="submit">Add Set</button>
           <input placeholder="Search sets" ng-model="filterSets"></input>
-
         </form>
       </div>
       <div class="home-mySetsCreateSetContainer">
-        <div id="home-mySetsContainer">
+
           <ul ng-repeat="set in sets | filter: filterSets track by $index">
             <li ui-sref="mySet({setId: set._id})" id="home-setName">{{set.setName}}</li>
           </ul>
-        </div>
+
 
       </div>
     </div>

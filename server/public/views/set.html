@@ -3,22 +3,20 @@
 <section class="mySet-body-wrapper">
   <section class="body-container">
       <h1 class="set-name">{{set.title}}</h1>
-      <h2 ng-show="set.setDescription > 0" class="set-description">...{{set.description}}</h2>
-      <h2 ng-show="flashcards.length > 0">{{currentFlashcard}}/{{flashcards.length}}</h2>
+      <h2 ng-show="set.setDescription.length > 0" class="set-description">...{{set.description}}</h2>
+      <h2 ng-show="flashcards.length > 0" class="set-number">{{currentFlashcard}}/{{flashcards.length}}</h2>
 
   <div id="flip-container" class="flip-container" ontouchstart="this.classList.toggle('hover');">
     <div class="flipper">
       <div class="front">
-        <h1
-            class="animated flashcard-container zoomInLeft"
+        <h1 class="animated flashcard-container"
             id="term">{{flashcards[currentIndex].term}}
         </h1>
       </div>
       <div class="back">
-        <h2
-            class="animated flashcard-container"
+        <h2 class="animated flashcard-container"
             id="definition">{{flashcards[currentIndex].definition}}
-          <h2>
+        <h2>
       </div>
     </div>
   </div>
@@ -26,7 +24,7 @@
     <section class="controls">
       <div class="">
         <input ng-model="autoplay" id="autoplayCheckbox" type="checkbox">
-        <label for="autoplayCheckbox">Autoplay</label>
+        <label for="autoplayCheckbox" style="color: #fbf7e4;">Autoplay</label>
         <img ng-click="previousCard()" id="left-arrow-button" src="../images/left-right-arrow.png" alt="left-arrow" />
         <img ng-click="showAnswer()" id="flip-arrow-button" src="../images/flip-arrow-button.png" alt="up-arrow" />
         <img ng-click="nextCard()" id="right-arrow-button" src="../images/left-right-arrow.png" alt="right-arrow" />
