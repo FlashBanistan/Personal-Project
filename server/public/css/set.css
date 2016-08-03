@@ -3,7 +3,7 @@
 }
 #myset-header{
   width: 100%;
-  height: 20px;
+  height: 150px;
   background-color: maroon;
 }
 .body-container{
@@ -16,15 +16,17 @@
   background-size: cover;
 }
 .flashcard-container{
+  position: relative;
   background-image: url('../images/flashcard-front.png');
   background-repeat: no-repeat;
-  height: 310px;
+  height: 300px;
   width: 510px;
   display: flex;
   overflow-y: auto;
   justify-content: center;
   align-items: center;
 }
+
 .set-name{
   font-size: 60px;
   color: #fbf7e4;
